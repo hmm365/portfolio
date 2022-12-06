@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 500;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format('truetype');
+    font-display: swap;
+}
+@font-face {
+    font-family: 'GmarketSans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
+    src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
+        url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'nanum';
+    src: url('../fonts/20220316_NaverBD-Light.eot');
+    src: url('../fonts/20220316_NaverBD-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/20220316_NaverBD-Light.woff2') format('woff2'),
+        url('../fonts/20220316_NaverBD-Light.woff') format('woff'), url('../fonts/20220316_NaverBD-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'nanum';
+    src: url('../fonts/20220316_NaverBD-Regular.eot');
+    src: url('../fonts/20220316_NaverBD-Regular.eot?#iefix') format('embedded-opentype'), url('../fonts/20220316_NaverBD-Regular.woff2') format('woff2'),
+        url('../fonts/20220316_NaverBD-Regular.woff') format('woff'), url('../fonts/20220316_NaverBD-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'nanum';
+    src: url('../fonts/20220316_NaverBD-Bold.eot');
+    src: url('../fonts/20220316_NaverBD-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/20220316_NaverBD-Bold.woff2') format('woff2'),
+        url('../fonts/20220316_NaverBD-Bold.woff') format('woff'), url('../fonts/20220316_NaverBD-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'nanum';
+    src: url('../fonts/20220316_NaverBD-Heavy.eot');
+    src: url('../fonts/20220316_NaverBD-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/20220316_NaverBD-Heavy.woff2') format('woff2'),
+        url('../fonts/20220316_NaverBD-Heavy.woff') format('woff'), url('../fonts/20220316_NaverBD-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'nanum';
+    src: url('../fonts/20220316_NaverBD-ExtraBold.eot');
+    src: url('../fonts/20220316_NaverBD-ExtraBold.eot?#iefix') format('embedded-opentype'), url('../fonts/20220316_NaverBD-ExtraBold.woff2') format('woff2'),
+        url('../fonts/20220316_NaverBD-ExtraBold.woff') format('woff'), url('../fonts/20220316_NaverBD-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

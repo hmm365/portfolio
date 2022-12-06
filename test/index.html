@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            :root {
+                --black: #000;
+                --white: #ffffff;
+                --accent: #fff;
+                --vh: 100vh;
+            }
+
+            .loader {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                height: var(--vh);
+                z-index: 1000;
+                background-color: var(--black);
+                color: var(--accent);
+            }
+            .loader__cols {
+                display: flex;
+                justify-content: space-between;
+                gap: 1.0416666667vw;
+                height: 100vh;
+                height: var(--vh);
+            }
+            .loader__col {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100vh;
+                height: var(--vh);
+            }
+            /* .loader__col--1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+            } */
+            /* .loader__col--1.done {
+                width: auto;
+                position: static;
+            } */
+            /* .loader__col--1 .loader__item {
+                position: relative;
+                top: 0;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                width: fit-content;
+                left: 50vw;
+                transform: translate(-50%);
+            } */
+            .loader__item {
+                font-size: 3.6458333333vw;
+                line-height: 1em;
+                white-space: nowrap;
+                opacity: 0;
+            }
+
+            .dnone {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="loader">
+            <div class="loader__cols">
+                <div class="loader__col loader__col--1">
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                </div>
+                <div class="loader__col loader__col--2">
+                    <!--[-->
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <!--]-->
+                </div>
+                <div class="loader__col loader__col--3">
+                    <!--[-->
+                    <div class="loader__item dope loader__item--ctt">Syumay ®</div>
+                    <div class="loader__item dope loader__item--ct">Syumay ®</div>
+                    <!--[-->
+                    <div class="loader__item loader__item--c">Syumay ®</div>
+                    <!--[-->
+                    <div class="loader__item dope loader__item--cb">Syumay ®</div>
+                    <div class="loader__item dope loader__item--cbb">Syumay ®</div>
+
+                    <!--]-->
+                </div>
+                <div class="loader__col loader__col--4">
+                    <!--[-->
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <!--]-->
+                </div>
+                <div class="loader__col loader__col--5">
+                    <!--[-->
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <div class="loader__item dope">Syumay ®</div>
+                    <!--]-->
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
+        <script>
+            const splitText = (selector) => {
+                const elem = document.querySelector(selector);
+
+                const text = elem.innerText;
+                const chars = text.split('');
+                for (let index = 0; index < chars.length; index++) {
+                    if (chars[index] === ' ') {
+                        chars[index] = '&nbsp;';
+                    }
+                }
+
+                const charsContainer = document.createElement('div');
+                const charsArray = [];
+
+                charsContainer.style.position = 'relative';
+                charsContainer.style.display = 'inline-block';
+
+                chars.forEach((char) => {
+                    const charContainer = document.createElement('span');
+
+                    charContainer.style.position = 'relative';
+                    charContainer.style.display = 'inline-block';
+                    charContainer.innerHTML = char;
+                    charsContainer.appendChild(charContainer);
+
+                    charsArray.push(charContainer);
+                });
+                // remove current text
+                elem.innerHTML = '';
+                // append new structure
+                elem.appendChild(charsContainer);
+
+                return charsArray;
+            };
+
+            var tl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
+            const chars = splitText('.loader__item--c');
+            tl.to('.loader__item--c', { opacity: 1, duration: 0 });
+            tl.from(
+                chars,
+                {
+                    duration: 1.5,
+                    y: 50,
+                    opacity: 0,
+                    stagger: 0.1,
+                    delay: 0.5,
+                    ease: Elastic.easeOut.config(1, 0.3),
+                },
+                '-=0.5'
+            );
+            tl.fromTo(
+                '.loader__item--ct',
+                {
+                    opacity: 0,
+                    y: '400%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                },
+                '-=1'
+            );
+            tl.fromTo(
+                '.loader__item--cb',
+                {
+                    opacity: 0,
+                    y: '-400%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                },
+                '-=1.5'
+            );
+
+            tl.fromTo(
+                '.loader__item--ctt',
+                {
+                    opacity: 0,
+                    y: '400%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                },
+                '-=0.5'
+            );
+            tl.fromTo(
+                '.loader__item--cbb',
+                {
+                    opacity: 0,
+                    y: '-400%',
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.5,
+                },
+                '-=1.5'
+            );
+
+            tl.fromTo(
+                '.loader__col--2 .loader__item',
+                {
+                    opacity: 0,
+                    x: '80%',
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                },
+                '-=0'
+            );
+            tl.fromTo(
+                '.loader__col--4 .loader__item',
+                {
+                    opacity: 0,
+                    x: '-80%',
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                },
+                '-=1'
+            );
+
+            tl.fromTo(
+                '.loader__col--1 .loader__item',
+                {
+                    opacity: 0,
+                    x: '80%',
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                },
+                '-=0.3'
+            );
+            tl.fromTo(
+                '.loader__col--5 .loader__item',
+                {
+                    opacity: 0,
+                    x: '-80%',
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 1,
+                },
+                '-=1'
+            );
+            tl.to(
+                '.dope',
+                {
+                    delay: 0.2,
+                    opacity: 0,
+                    duration: 1,
+                },
+                '-=0.2'
+            );
+            tl.to('.loader__item--c', {
+                scale: 40,
+                duration: 1,
+                ease: Sine.easeOut,
+            });
+
+            tl.to(
+                '.loader__item--c',
+                {
+                    opacity: 0,
+                    duration: 1,
+                },
+                '-=0.3'
+            );
+            tl.to('.loader', {
+                className: 'dnone',
+            });
+        </script>
+    </body>
+</html>
