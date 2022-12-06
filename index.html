@@ -798,16 +798,18 @@
                         gsap.set(e, {
                             scale: 0.5,
                         });
+
                         gsap.to(e, {
-                            scale: 1,
                             ease: 'none',
                             scrollTrigger: {
                                 trigger: e,
                                 containerAnimation: horiz,
                                 start: '-50% 100%',
+
                                 toggleActions: 'play none none play',
                                 // markers: true,
                             },
+                            scale: 1,
                         });
                     });
 
@@ -816,15 +818,15 @@
                             scale: 0.5,
                         });
                         gsap.to(e, {
-                            scale: 1,
                             ease: 'none',
                             scrollTrigger: {
                                 trigger: e,
                                 containerAnimation: horiz2,
-                                start: '-50% 100%',
+                                start: '50% 100%',
                                 toggleActions: 'play none none play',
                                 // markers: true,
                             },
+                            scale: 1,
                         });
                     });
 
@@ -833,15 +835,15 @@
                             scale: 0.5,
                         });
                         gsap.to(e, {
-                            scale: 1,
                             ease: 'none',
                             scrollTrigger: {
                                 trigger: e,
                                 containerAnimation: horiz3,
-                                start: '-50% 100%',
+                                start: '50% 100%',
                                 toggleActions: 'play none none play',
                                 // markers: true,
                             },
+                            scale: 1,
                         });
                     });
 
