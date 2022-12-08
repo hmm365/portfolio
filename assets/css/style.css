@@ -755,6 +755,9 @@ main {
         flex-wrap: wrap;
         gap: 0;
     }
+    .project .desc__title h2 {
+        font-size: 10vw;
+    }
     .project__card__inner .card {
         margin-right: 0;
         height: 95vh;

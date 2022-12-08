@@ -200,7 +200,7 @@
                         </div>
                     </article>
 
-                    <div class="nobox desktop"></div>
+                    <!-- <div class="nobox desktop"></div> -->
 
                     <article class="project__card__conts card2">
                         <div class="project__card__wrap">
@@ -784,25 +784,11 @@
                         },
                     });
 
-                    // document.querySelectorAll('.tt_movement').forEach((e, inx) => {
-                    //     gsap.set(e, {
-                    //         scale: 0.5,
-                    //     });
-
-                    //     gsap.to(e, {
-                    //         ease: 'none',
-                    //         scrollTrigger: {
-                    //             trigger: e,
-                    //             containerAnimation: horiz,
-                    //             start: '-50% 100%',
-
-                    //             toggleActions: 'play none none play',
-                    //             // markers: true,
-                    //         },
-                    //         scale: 1,
-                    //     });
-                    // });
-
+                    gsap.utils.toArray('.desc__title').forEach((desc, i) => {
+                        gsap.set(desc, {
+                            opacity: 1,
+                        });
+                    });
                     document.querySelectorAll('.t_movement').forEach((e, inx) => {
                         if (inx === 0) {
                             gsap.set(e, {
@@ -974,15 +960,12 @@
                     gsap.utils.toArray('.desc__title').forEach((desc, i) => {
                         gsap.set(desc, {
                             opacity: 0,
-                            duration: 1,
-                            y: '100',
                         });
                         gsap.to(desc, {
-                            duration: 2,
-                            y: 0,
+                            duration: 0.5,
                             opacity: 1,
                             stagger: 0.1,
-                            ease: Elastic.easeOut.config(1, 0.3),
+                            ease: 'none',
                             scrollTrigger: {
                                 trigger: desc,
                                 start: 'top 70%',
