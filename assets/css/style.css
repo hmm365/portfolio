@@ -414,7 +414,7 @@ main {
 .project .desc__title h2 {
     font-family: var(--Poppins);
     font-weight: 900;
-    font-size: 8vw;
+    font-size: 12vh;
     line-height: 93%;
     text-transform: uppercase;
     color: #fff;
@@ -435,7 +435,7 @@ main {
 .project .desc__info h2 {
     font-family: var(--Poppins);
     font-weight: 900;
-    font-size: 12vh;
+    font-size: 10vh;
     line-height: 93%;
     text-transform: uppercase;
     color: #fff;
@@ -445,7 +445,7 @@ main {
 .project .desc__info p {
     font-family: var(--Nanum);
     font-weight: 400;
-    font-size: 1.8vh;
+    font-size: 1.7vh;
     line-height: 144.5%;
     color: #ffffff;
     margin-left: 5px;
@@ -456,7 +456,7 @@ main {
 }
 
 .project .desc__info a {
-    font-size: 1.5vh;
+    font-size: 1.4vh;
     font-family: var(--Nanum);
     padding: 11px 33px;
     background: #fff;
