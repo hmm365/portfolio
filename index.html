@@ -111,9 +111,8 @@
                                 것을 구현할 수 있는 프론트엔드 개발에 점차 흥미를 느끼게 됐습니다.<br />
                             </p>
                         </div>
+                        <div class="holebox1 hole"></div>
                     </article>
-
-                    <div class="hole"></div>
 
                     <img class="profile" src="assets/img/profile.png" alt="profile" />
                     <article class="skillUp">
@@ -129,6 +128,7 @@
                             </p>
                             <a href="https://github.com/hmm365" target="_blank">Go Github</a>
                         </div>
+                        <div class="holebox2 hole"></div>
                     </article>
                 </div>
             </section>
@@ -505,8 +505,8 @@
         <script src="assets/js/TweenMax.min.js"></script>
         <script src="assets/js/Hole.js"></script>
         <script>
-            const holeOne = new Hole('', document.querySelector('.hole'), 0x07d36e);
-            // const holeTwo = new Hole('', document.querySelector('.holebox2'), 0xfb0692);
+            const holeOne = new Hole('', document.querySelector('.holebox1'), 0xfb0692);
+            const holeTwo = new Hole('', document.querySelector('.holebox2'), 0x07d36e);
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
@@ -1132,15 +1132,35 @@
                         stagger: 0.1,
                     });
 
-                    gsap.to('.hole', {
+                    gsap.to('.holebox1', {
                         scrollTrigger: {
-                            trigger: '.hole',
-                            start: 'top top',
-                            end: '220% top',
-                            pin: true,
-                            pinSpacing: false,
+                            trigger: '.bulidUp__info h2',
+                            start: '-150% center',
+                            end: '-150% center',
+                            // scrub: true,
+                            //markers: true,
+
+                            toggleActions: 'play play play play',
                         },
+                        delay: 0.4,
+                        duration: 2,
+                        opacity: 1,
                     });
+                    gsap.to('.holebox2', {
+                        scrollTrigger: {
+                            trigger: '.skillUp__info',
+                            start: '-80% center',
+                            end: '-80% center',
+                            // scrub: true,
+                            //markers: true,
+
+                            toggleActions: 'play play play play',
+                        },
+                        delay: 0.6,
+                        duration: 2,
+                        opacity: 1,
+                    });
+
                     gsap.to('.profile', {
                         scrollTrigger: {
                             trigger: '.bulidUp__info h2',

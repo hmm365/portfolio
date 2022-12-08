@@ -1,8 +1,8 @@
 class Hole {
     constructor(opts, testtest, colorTrue) {
-        if (Hole.instance) {
-            return Hole.instance;
-        }
+        // if (Hole.instance) {
+        //     return Hole.instance;
+        // }
         Hole.instance = this;
         this.opts = Object.assign({}, Hole.defaultOpts, opts);
         this.world = new World('', testtest);
