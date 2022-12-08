@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="./assets/css/loader.css" />
     </head>
     <body>
-        <div class="loader dnone">
+        <div class="loader">
             <div class="loader__cols">
                 <div class="loader__col loader__col--1">
                     <div class="loader__item dope">Syumay ®</div>
@@ -112,7 +112,9 @@
                             </p>
                         </div>
                     </article>
+
                     <div class="hole"></div>
+
                     <img class="profile" src="assets/img/profile.png" alt="profile" />
                     <article class="skillUp">
                         <div class="skillUp__info">
@@ -509,7 +511,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-        <!-- <script>
+        <script>
             const splitText = (selector) => {
                 const elem = document.querySelector(selector);
 
@@ -693,7 +695,7 @@
             tl.to('.loader', {
                 className: 'dnone',
             });
-        </script> -->
+        </script>
 
         <script>
             document.querySelector('.headline__btn').addEventListener('click', () => {
@@ -729,7 +731,7 @@
         </script>
 
         <script>
-            var tl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
+            // var tl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
 
             gsap.registerPlugin(ScrollTrigger);
             // ScrollTrigger.saveStyles('.mobile, .desktops');
@@ -1041,17 +1043,23 @@
                     tl.fromTo('.headline__btn', { opacity: 0 }, { opacity: 1, duration: 1 }, '-=0.2');
                     tl.fromTo('.header', { opacity: 0 }, { opacity: 1, duration: 1 }, '-=1');
 
-                    gsap.to('.logo', {
-                        scrollTrigger: {
-                            trigger: '.example.black',
-                            start: 'top top',
-                            end: '30% top',
-                            scrub: true,
-                            // markers: true,
-                            toggleActions: 'play play reverse play',
+                    gsap.fromTo(
+                        '.logo',
+                        {
+                            color: '#ffffff',
                         },
-                        color: '#000000',
-                    });
+                        {
+                            scrollTrigger: {
+                                trigger: '.example.black',
+                                start: 'top top',
+                                end: '30% top',
+                                scrub: true,
+                                // markers: true,
+                                toggleActions: 'play play reverse play',
+                            },
+                            color: '#000000',
+                        }
+                    );
 
                     gsap.fromTo(
                         '.logo',
@@ -1071,6 +1079,10 @@
                             color: '#ffffff',
                         }
                     );
+
+                    gsap.set('.logo', {
+                        color: '#ffffff',
+                    });
 
                     gsap.utils.toArray('.panel').forEach((panel, i) => {
                         ScrollTrigger.create({
@@ -1120,28 +1132,15 @@
                         stagger: 0.1,
                     });
 
-                    gsap.fromTo(
-                        '.hole',
-                        {
-                            y: '0',
-                            x: '0',
-                            opacity: 1,
+                    gsap.to('.hole', {
+                        scrollTrigger: {
+                            trigger: '.hole',
+                            start: 'top top',
+                            end: '220% top',
+                            pin: true,
+                            pinSpacing: false,
                         },
-                        {
-                            scrollTrigger: {
-                                ease: Power4.easeOut,
-                                trigger: '.about',
-                                start: '20% center',
-                                end: '80% center',
-                                scrub: true,
-                                // markers: true,
-                                toggleActions: 'play play reverse play',
-                            },
-
-                            y: '180%',
-                            x: '40%',
-                        }
-                    );
+                    });
                     gsap.to('.profile', {
                         scrollTrigger: {
                             trigger: '.bulidUp__info h2',
