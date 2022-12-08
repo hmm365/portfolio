@@ -1045,35 +1045,32 @@
                         scrollTrigger: {
                             trigger: '.example.black',
                             start: 'top top',
-                            end: 'top top',
-                            // scrub: true,
-                            //markers: true,
-                            toggleActions: 'play play reset reset',
+                            end: '30% top',
+                            scrub: true,
+                            // markers: true,
+                            toggleActions: 'play play reverse play',
                         },
                         color: '#000000',
                     });
-                    gsap.to('.logo', {
-                        scrollTrigger: {
-                            trigger: '.growing',
-                            start: 'bottom top',
-                            end: 'bottom top',
-                            // scrub: true,
-                            //markers: true,
-                            toggleActions: 'play play reset reset',
+
+                    gsap.fromTo(
+                        '.logo',
+                        {
+                            color: '#000000',
                         },
-                        color: '#ffffff',
-                    });
-                    gsap.to('.logo', {
-                        scrollTrigger: {
-                            trigger: '.groupPhoto',
-                            start: 'top top',
-                            end: 'top top',
-                            // scrub: true,
-                            //markers: true,
-                            toggleActions: 'reset reset play play',
-                        },
-                        color: '#000000',
-                    });
+
+                        {
+                            scrollTrigger: {
+                                trigger: '.groupPhoto',
+                                start: 'top top',
+                                end: '30% top',
+                                scrub: true,
+                                // markers: true,
+                                toggleActions: 'play play reverse play',
+                            },
+                            color: '#ffffff',
+                        }
+                    );
 
                     gsap.utils.toArray('.panel').forEach((panel, i) => {
                         ScrollTrigger.create({
@@ -1186,7 +1183,7 @@
                             start: 'top center',
                             end: 'bottom center',
                             scrub: true,
-                            markers: true,
+                            // markers: true,
 
                             toggleActions: 'play play reverse play',
                         },
