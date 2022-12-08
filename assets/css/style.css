@@ -157,6 +157,18 @@ main {
     overflow: hidden;
     background: #000;
 }
+.hole {
+    position: absolute;
+    width: 100%;
+    height: 50vh !important;
+    transform: scale(1.3);
+    z-index: 1;
+
+    top: 10%;
+    left: -20%;
+    opacity: 0;
+}
+
 .bulidUp {
     position: relative;
 }
@@ -273,24 +285,7 @@ main {
     opacity: 0;
     margin: 10% auto;
 }
-.hole {
-    position: absolute;
-    width: 100%;
-    height: 50vh !important;
-    transform: scale(1);
-    z-index: 1;
-    opacity: 0.8;
-}
-.holebox1 {
-    top: 0;
-    left: -20%;
-    opacity: 0;
-}
-.holebox2 {
-    top: 0;
-    right: -20%;
-    opacity: 0;
-}
+
 /* //about */
 
 .example {
@@ -412,6 +407,7 @@ main {
     transform: translate(-50%, -50%);
 }
 .project .desc__title h2 {
+    text-align: center;
     font-family: var(--Poppins);
     font-weight: 900;
     font-size: 12vh;
@@ -462,7 +458,7 @@ main {
     background: #fff;
     border-radius: 100px;
     font-weight: 300;
-    margin-right: 20px;
+    margin-right: 10px;
     text-transform: uppercase;
     color: #000000;
     margin-top: 30px;
@@ -502,17 +498,17 @@ main {
     word-break: keep-all;
 }
 
-.stusys ul {
+.study ul {
     border-top: 1px solid #000;
 }
-.stusys ul li {
+.study ul li {
     padding: 45px 0;
     border-bottom: 1px solid #000;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.stusys ul li h3 {
+.study ul li h3 {
     font-weight: 500;
     font-size: 30px;
     line-height: 144.5%;
@@ -520,16 +516,16 @@ main {
     opacity: 0.8;
     margin-right: 20px;
 }
-.stusys ul li h3 span {
+.study ul li h3 span {
     display: block;
     font-weight: 300;
     font-size: 20px;
     line-height: 144.5%;
     color: #030303;
-
+    margin-top: 5px;
     opacity: 0.8;
 }
-.stusys ul li a {
+.study ul li a {
     padding: 10px 70px;
     font-weight: 400;
     font-size: 22px;
@@ -581,17 +577,17 @@ main {
 .groupPhoto {
     width: 100%;
     height: 80vh;
+    opacity: 0.4;
 }
 .groupPhoto img {
     width: 100%;
     height: 100%;
-    opacity: 0.4;
     transition: all 0.5s ease;
     object-fit: cover;
 }
-.groupPhoto:hover img {
+/* .groupPhoto:hover img {
     opacity: 0.6;
-}
+} */
 .connect {
     height: 100vh;
     width: 100%;
@@ -916,13 +912,13 @@ main {
         font-size: 3.5vw;
     }
 
-    .stusys ul li h3 {
+    .study ul li h3 {
         font-size: 5vw;
     }
-    .stusys ul li h3 span {
+    .study ul li h3 span {
         font-size: 3.5vw;
     }
-    .stusys ul li a {
+    .study ul li a {
         padding: 10px 30px;
         font-size: 3vw;
     }

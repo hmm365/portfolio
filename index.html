@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="./assets/css/loader.css" />
     </head>
     <body>
-        <div class="loader">
+        <div class="loader dnone">
             <div class="loader__cols">
                 <div class="loader__col loader__col--1">
                     <div class="loader__item dope">Syumay ®</div>
@@ -111,9 +111,8 @@
                                 것을 구현할 수 있는 프론트엔드 개발에 점차 흥미를 느끼게 됐습니다.<br />
                             </p>
                         </div>
-
-                        <div class="holebox1 hole"></div>
                     </article>
+                    <div class="hole"></div>
                     <img class="profile" src="assets/img/profile.png" alt="profile" />
                     <article class="skillUp">
                         <div class="skillUp__info">
@@ -128,8 +127,6 @@
                             </p>
                             <a href="https://github.com/hmm365" target="_blank">Go Github</a>
                         </div>
-
-                        <div class="holebox2 hole"></div>
                     </article>
                 </div>
             </section>
@@ -359,7 +356,7 @@
                             프로젝트에 적용시켜보며 트렌드한 개발자가 되기 위해 노력하고 있습니다.
                         </p>
                     </div>
-                    <div class="stusys">
+                    <div class="study">
                         <ul>
                             <li>
                                 <h3>
@@ -417,6 +414,13 @@
                                     <span>Javascript 공부한것을 정리하는 사이트입니다.</span>
                                 </h3>
                                 <a href="https://hmm365.github.io/codingclass/javascript/javascript01.html" target="_blank">SHOW</a>
+                            </li>
+                            <li>
+                                <h3>
+                                    Algorithm
+                                    <span>Algorithm 공부한것을 티스토리에 게시했습니다.</span>
+                                </h3>
+                                <a href="https://syumay.tistory.com/category/JavaScript/Algorithm" target="_blank">SHOW</a>
                             </li>
                             <li>
                                 <h3>
@@ -499,13 +503,13 @@
         <script src="assets/js/TweenMax.min.js"></script>
         <script src="assets/js/Hole.js"></script>
         <script>
-            const holeOne = new Hole('', document.querySelector('.holebox1'), 0xfb0692);
-            const holeTwo = new Hole('', document.querySelector('.holebox2'), 0x07d36e);
+            const holeOne = new Hole('', document.querySelector('.hole'), 0x07d36e);
+            // const holeTwo = new Hole('', document.querySelector('.holebox2'), 0xfb0692);
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-        <script>
+        <!-- <script>
             const splitText = (selector) => {
                 const elem = document.querySelector(selector);
 
@@ -689,7 +693,7 @@
             tl.to('.loader', {
                 className: 'dnone',
             });
-        </script>
+        </script> -->
 
         <script>
             document.querySelector('.headline__btn').addEventListener('click', () => {
@@ -725,7 +729,7 @@
         </script>
 
         <script>
-            // var tl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
+            var tl = gsap.timeline({ repeat: 0, repeatDelay: 0 });
 
             gsap.registerPlugin(ScrollTrigger);
             // ScrollTrigger.saveStyles('.mobile, .desktops');
@@ -739,6 +743,7 @@
                 requestAnimationFrame(raf);
             }
             requestAnimationFrame(raf);
+
             ScrollTrigger.saveStyles('.mobile, .desktops');
             ScrollTrigger.matchMedia({
                 '(min-width: 1100px)': function () {
@@ -1015,6 +1020,7 @@
                     gsap.set('.headline__tit', {
                         opacity: 1,
                     });
+
                     tl.fromTo(
                         '.headline__tit',
                         {
@@ -1117,20 +1123,28 @@
                         stagger: 0.1,
                     });
 
-                    gsap.to('.holebox1', {
-                        scrollTrigger: {
-                            trigger: '.bulidUp__info h2',
-                            start: '-150% center',
-                            end: '-150% center',
-                            // scrub: true,
-                            //markers: true,
-
-                            toggleActions: 'play play play play',
+                    gsap.fromTo(
+                        '.hole',
+                        {
+                            y: '0',
+                            x: '0',
+                            opacity: 1,
                         },
-                        delay: 0.4,
-                        duration: 2,
-                        opacity: 1,
-                    });
+                        {
+                            scrollTrigger: {
+                                ease: Power4.easeOut,
+                                trigger: '.about',
+                                start: '20% center',
+                                end: '80% center',
+                                scrub: true,
+                                // markers: true,
+                                toggleActions: 'play play reverse play',
+                            },
+
+                            y: '180%',
+                            x: '40%',
+                        }
+                    );
                     gsap.to('.profile', {
                         scrollTrigger: {
                             trigger: '.bulidUp__info h2',
@@ -1165,19 +1179,19 @@
                         ease: Elastic.easeOut.config(0.5, 0.3),
                         // stagger: 0.1,
                     });
-                    gsap.to('.holebox2', {
-                        scrollTrigger: {
-                            trigger: '.skillUp__info',
-                            start: '-80% center',
-                            end: '-80% center',
-                            // scrub: true,
-                            //markers: true,
 
-                            toggleActions: 'play play play play',
+                    gsap.to('.groupPhoto', {
+                        scrollTrigger: {
+                            trigger: '.groupPhoto',
+                            start: 'top center',
+                            end: 'bottom center',
+                            scrub: true,
+                            markers: true,
+
+                            toggleActions: 'play play reverse play',
                         },
-                        delay: 0.6,
-                        duration: 2,
                         opacity: 1,
+                        // stagger: 0.1,
                     });
                 },
             });
