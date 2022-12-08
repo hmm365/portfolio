@@ -1,5 +1,11 @@
 @import url('./reset.css');
 @import url('./fonts.css');
+.mb-20 {
+    margin-bottom: 20px;
+}
+.mb-30 {
+    margin-bottom: 30px;
+}
 :root {
     --padding: 1.5vmin;
     --duration: 400ms;
@@ -339,7 +345,11 @@ main {
     height: 100vh;
     gap: 30vw;
 }
-
+.project__card__inner.ywrap {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 0;
+}
 .nobox {
     width: 100vw;
     height: 20vh;
@@ -351,7 +361,7 @@ main {
 }
 .project__card__inner .card {
     width: 95vw;
-    height: 100%;
+    height: 100vh;
     position: relative;
     background: #000;
 }
@@ -365,17 +375,23 @@ main {
     height: 80vh;
     /* opacity: 0.4; */
     position: absolute;
-    left: 10%;
+    left: 20%;
     top: 50%;
     transform: translateY(-50%);
 }
+
 .siteImg img {
     width: 90%;
-    height: 90%;
+    height: 88%;
     vertical-align: top;
     object-fit: cover;
     object-position: center center;
     opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+.siteImg:hover img {
+    opacity: 0.8;
 }
 .siteImg .num {
     font-family: var(--Poppins);
@@ -383,7 +399,7 @@ main {
     font-weight: 100;
     font-size: 130px;
     line-height: 93%;
-    color: #d9d9d9;
+    color: #fff;
     top: -7%;
     right: 5%;
     z-index: 20;
@@ -391,17 +407,17 @@ main {
 
 .project .desc__title {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 .project .desc__title h2 {
     font-family: var(--Poppins);
     font-weight: 900;
-    font-size: 15vw;
+    font-size: 8vw;
     line-height: 93%;
     text-transform: uppercase;
-    color: #d9d9d9;
+    color: #fff;
     margin-bottom: -5px;
 }
 .project .desc__title span {
@@ -411,43 +427,45 @@ main {
 .project .desc__info {
     /* margin-top: 30vh; */
     position: absolute;
-    bottom: 25%;
-    right: 3%;
+    bottom: 30%;
+    left: 10%;
     z-index: 20;
 }
 
 .project .desc__info h2 {
     font-family: var(--Poppins);
     font-weight: 900;
-    font-size: 100px;
+    font-size: 12vh;
     line-height: 93%;
     text-transform: uppercase;
-    color: #d9d9d9;
-    margin-bottom: -5px;
+    color: #fff;
+    margin-bottom: 10px;
 }
-.project .desc__info span {
-    display: block;
-}
+
 .project .desc__info p {
     font-family: var(--Nanum);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.8vh;
     line-height: 144.5%;
     color: #ffffff;
-    opacity: 0.8;
     margin-left: 5px;
     word-break: keep-all;
+}
+.desc__info p:last-child {
     margin-bottom: 20px;
 }
+
 .project .desc__info a {
-    padding: 14px 35px;
-    background: #ccc;
+    font-size: 1.5vh;
+    font-family: var(--Nanum);
+    padding: 11px 33px;
+    background: #fff;
     border-radius: 100px;
-    font-weight: 400;
-    font-size: 20px;
+    font-weight: 300;
     margin-right: 20px;
     text-transform: uppercase;
     color: #000000;
+    margin-top: 30px;
 }
 /* //project */
 
@@ -560,10 +578,20 @@ main {
     margin-bottom: 0;
 }
 
-.groupPhoto img {
-    opacity: 0.4;
+.groupPhoto {
+    width: 100%;
+    height: 80vh;
 }
-
+.groupPhoto img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    transition: all 0.5s ease;
+    object-fit: cover;
+}
+.groupPhoto:hover img {
+    opacity: 0.6;
+}
 .connect {
     height: 100vh;
     width: 100%;
@@ -643,9 +671,7 @@ main {
 .footer__info > ul > li > ul > li {
     color: #ffffff;
 }
-.mb-20 {
-    margin-bottom: 20px;
-}
+
 .footer_btn a {
     display: inline-block;
     text-align: center;
@@ -737,9 +763,9 @@ main {
         height: 40vh;
     }
     .siteImg {
-        width: 85%;
+        width: 95%;
         margin-right: 0;
-        right: 0;
+        left: 2%;
     }
 
     .siteImg img {
