@@ -316,7 +316,7 @@ main {
 }
 
 /* //example */
-.desktop {
+.desktops {
     position: relative;
     box-sizing: content-box;
 }
@@ -718,7 +718,7 @@ main {
     }
 }
 @media (max-width: 1099px) {
-    .desktop {
+    .desktops {
         display: none;
     }
     .project {
